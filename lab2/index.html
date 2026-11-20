@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="manifest.json">
+  <title>Санауыш</title>
+</head>
+<body style="text-align:center; font-family:sans-serif">
+  <h1>Санауыш: <span id="n">0</span></h1>
+  <button id="b" style="font-size:20px">Бас</button>
+  <script>
+    let c = 0;
+    document.getElementById('b').onclick = () => {
+      document.getElementById('n').textContent = ++c;
+    };
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+</html>
